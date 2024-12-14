@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div
+        class="card mb-2 position-relative"
+        *ngFor="let item of cartItems$ | async"
+      >
+        <div class="card-body d-flex gap-3">
+          <img
+            class="img-thumbnail product-image"
+            width="120"
+            [src]="item.image"
+            alt=""
+          />
+          <div>
+            <h5>{{ item.title }}</h5>
+            <app-quantity-update
+              [quantity]="item.quantity"
+              (onIncrease)="increaseQuantity(item)"
+              (onDecrease)="decreaseQuantity(item)"
+            ></app-quantity-update>
+            <button
+              type="button"
+              class="btn btn-outline-danger btn-sm mt-2 delete-btn"
+              (click)="deleteFromCart(item)"
+            >
+              <i class="bi bi-trash"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>

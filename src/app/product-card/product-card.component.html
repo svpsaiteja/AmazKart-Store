@@ -1,0 +1,29 @@
+<div class="card fadeIn">
+  <img
+    [src]="product.image"
+    height="160"
+    class="card-img-top object-fit-contain p-2"
+    alt="..."
+  />
+  <div class="card-body">
+    <p class="card-title text-truncate" [title]="product.title">
+      {{ product.title }}
+    </p>
+
+    <h5>{{ product.price | currency : "INR" }}</h5>
+
+    <ng-container *ngIf="cartQuantity | async as quantity; else noCart">
+      <app-quantity-update
+        [quantity]="quantity"
+        (onIncrease)="increaseQuantity()"
+        (onDecrease)="decreaseQuantity()"
+      ></app-quantity-update>
+    </ng-container>
+
+    <ng-template #noCart>
+      <button class="btn btn-primary btn-sm" (click)="addToCart()">
+        Add to cart
+      </button>
+    </ng-template>
+  </div>
+</div>

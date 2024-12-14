@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+// Variable overrides first
+$primary: #5d4037;
+$enable-shadows: true;
+$prefix: "mo-";
+$placeholder-opacity-max: 0.15;
+$placeholder-opacity-min: 0.05;
+
+// Then import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+body {
+  background: linear-gradient(228deg, #efebe9, #fff8e1);
+}
+
+.fadeIn {
+  opacity: 0;
+  animation: fadeIn 0.2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

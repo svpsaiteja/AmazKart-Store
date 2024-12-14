@@ -1,0 +1,15 @@
+<div class="d-flex gap-2 align-items-center">
+  <button
+    class="btn btn-warning btn-sm rounded-pill"
+    (click)="onDecrease.emit()"
+  >
+    <i class="bi bi-dash-lg"></i>
+  </button>
+  <span class="font">{{ quantity }}</span>
+  <button
+    class="btn btn-warning btn-sm rounded-pill"
+    (click)="onIncrease.emit()"
+  >
+    <i class="bi bi-plus-lg"></i>
+  </button>
+</div>
