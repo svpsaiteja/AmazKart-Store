@@ -9,16 +9,24 @@ import {
   IncreaseQuantity,
   RemoveItem,
 } from '../store/cart/cart.actions';
+import { map } from 'rxjs';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cart-page',
-  imports: [CommonModule, QuantityUpdateComponent],
+  imports: [CommonModule, QuantityUpdateComponent, RouterLink],
   templateUrl: './cart-page.component.html',
   styleUrl: './cart-page.component.scss',
 })
 export class CartPageComponent {
   store = inject(Store);
   cartItems$ = this.store.select(CartState.getCart);
+
+  totalCartItemsPrice$ = this.cartItems$.pipe(
+    map((cartItems) =>
+      cartItems.reduce((total, i) => total + i.price * i.quantity, 0)
+    )
+  );
 
   increaseQuantity(item: CartItem) {
     this.store.dispatch(new IncreaseQuantity(item.id));

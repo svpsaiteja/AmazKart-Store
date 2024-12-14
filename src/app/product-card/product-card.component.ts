@@ -10,10 +10,11 @@ import {
   IncreaseQuantity,
 } from '../store/cart/cart.actions';
 import { QuantityUpdateComponent } from '../quantity-update/quantity-update.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-card',
-  imports: [CommonModule, QuantityUpdateComponent],
+  imports: [CommonModule, QuantityUpdateComponent, RouterLink],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.scss',
 })

@@ -16,6 +16,12 @@ export class ProductService {
     return this.httpClient.get<Product[]>(url);
   }
 
+  getProductDetails(id: number) {
+    const url = `${this.baseApiUrl}/products/${id}`;
+
+    return this.httpClient.get<Product>(url);
+  }
+
   getProductsByCategory(category: string) {
     const url = `${this.baseApiUrl}/products/category/${category}`;
 

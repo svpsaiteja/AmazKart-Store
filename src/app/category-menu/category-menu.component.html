@@ -1,6 +1,6 @@
 <ul class="list-group">
   <li
-    class="list-group-item"
+    class="list-group-item cursor-pointer"
     [class.active]="selectedCategory === ''"
     aria-current="true"
     (click)="onCategorySelect.emit('')"
@@ -8,7 +8,7 @@
     All
   </li>
   <li
-    class="list-group-item"
+    class="list-group-item cursor-pointer"
     (click)="onCategorySelect.emit(category)"
     [class.active]="selectedCategory === category"
     *ngFor="let category of categories"

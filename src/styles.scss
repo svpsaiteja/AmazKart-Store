@@ -2,14 +2,18 @@
 $primary: #5d4037;
 $enable-shadows: true;
 $prefix: "mo-";
-$placeholder-opacity-max: 0.15;
-$placeholder-opacity-min: 0.05;
+$placeholder-opacity-max: 0.05;
+$placeholder-opacity-min: 0.03;
 
 // Then import Bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 body {
   background: linear-gradient(228deg, #efebe9, #fff8e1);
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .fadeIn {

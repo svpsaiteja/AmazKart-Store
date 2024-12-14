@@ -1,0 +1,43 @@
+<div class="container">
+  <ng-template #shimmer
+    ><app-product-detail-shimmer></app-product-detail-shimmer
+  ></ng-template>
+
+  <div class="row">
+    <ng-container *ngIf="product$ | async as product; else shimmer">
+      <div class="col-sm col-md-4">
+        <img
+          [src]="product.image"
+          alt=""
+          class="card product-img img-thumbnamil"
+        />
+      </div>
+      <div class="col-sm col-md-8">
+        <h5>{{ product.title }}</h5>
+        <p class="mb-3 fs-3 fw-bold">{{ product.price | currency : "INR" }}</p>
+        <p class="mb-3">{{ product.description }}</p>
+
+        <ng-container *ngIf="cartItem$ | async as cartItem; else addToCartBtn">
+          <app-quantity-update
+            [quantity]="cartItem.quantity"
+            (onDecrease)="decreaseQuantity(product.id)"
+            (onIncrease)="increaseQuantity(product.id)"
+          ></app-quantity-update>
+
+          <button
+            class="btn btn-outline-danger mt-3"
+            (click)="deleteFromCart(product.id)"
+          >
+            Remove from cart
+          </button>
+        </ng-container>
+
+        <ng-template #addToCartBtn>
+          <button class="btn btn-primary" (click)="addToCart(product)">
+            Add to cart
+          </button>
+        </ng-template>
+      </div>
+    </ng-container>
+  </div>
+</div>

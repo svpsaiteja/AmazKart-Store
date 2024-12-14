@@ -28,6 +28,11 @@ export class CartState {
   }
 
   @Selector()
+  static getCartItem({ cartItems }: CartStateModel) {
+    return (itemId: number) => cartItems.find((i) => i.id === itemId) || null;
+  }
+
+  @Selector()
   static cartQuantity({ cartItems }: CartStateModel): number {
     return cartItems.reduce((total, cartItem) => total + cartItem.quantity, 0);
   }

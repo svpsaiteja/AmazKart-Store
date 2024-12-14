@@ -1,12 +1,17 @@
 <div class="row">
   <div class="col-2 d-none d-sm-block">
-    <ng-container *ngIf="categories$ | async as categories">
+    <ng-container
+      *ngIf="categories$ | async as categories; else categoryShimmer"
+    >
       <app-category-menu
         (onCategorySelect)="setSelectedCategory($event)"
         [selectedCategory]="(selectedCategory | async) || ''"
         [categories]="categories"
       ></app-category-menu>
     </ng-container>
+    <ng-template #categoryShimmer>
+      <app-category-menu-shimmer></app-category-menu-shimmer>
+    </ng-template>
   </div>
   <div class="col col-sm-10">
     <ng-container *ngIf="products$ | async as products">

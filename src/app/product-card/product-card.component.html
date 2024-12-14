@@ -6,9 +6,13 @@
     alt="..."
   />
   <div class="card-body">
-    <p class="card-title text-truncate" [title]="product.title">
+    <a
+      class="card-title text-truncate d-block text-decoration-none"
+      [title]="product.title"
+      [routerLink]="['product', product.id]"
+    >
       {{ product.title }}
-    </p>
+    </a>
 
     <h5>{{ product.price | currency : "INR" }}</h5>
 

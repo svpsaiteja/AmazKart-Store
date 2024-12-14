@@ -6,6 +6,7 @@ import { ProductListComponent } from '../product-list/product-list.component';
 import { ProductService } from '../product.service';
 import { Product } from '../types/Product';
 import { CommonModule } from '@angular/common';
+import { CategoryMenuShimmerComponent } from '../category-menu-shimmer/category-menu-shimmer.component';
 
 @Component({
   selector: 'app-home-page',
@@ -14,6 +15,7 @@ import { CommonModule } from '@angular/common';
     ProductListComponent,
     CategoryMenuComponent,
     ProductListShimmerComponent,
+    CategoryMenuShimmerComponent,
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
