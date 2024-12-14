@@ -1,14 +1,14 @@
 import { Component, Input } from '@angular/core';
-import { Product } from '../types/Product';
+import { Product } from '../../types/Product';
 import { map, Observable } from 'rxjs';
 import { Store } from '@ngxs/store';
-import { CartState } from '../store/cart/cart.state';
+import { CartState } from '../../store/cart/cart.state';
 import { CommonModule } from '@angular/common';
 import {
   AddItem,
   DecreaseQuantity,
   IncreaseQuantity,
-} from '../store/cart/cart.actions';
+} from '../../store/cart/cart.actions';
 import { QuantityUpdateComponent } from '../quantity-update/quantity-update.component';
 import { RouterLink } from '@angular/router';
 

@@ -1,14 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngxs/store';
-import { CartState } from '../store/cart/cart.state';
+import { CartState } from '../../store/cart/cart.state';
 import { CommonModule } from '@angular/common';
-import { QuantityUpdateComponent } from '../quantity-update/quantity-update.component';
-import { CartItem } from '../types/CartItem';
+import { QuantityUpdateComponent } from '../../components/quantity-update/quantity-update.component';
+import { CartItem } from '../../types/CartItem';
 import {
   DecreaseQuantity,
   IncreaseQuantity,
   RemoveItem,
-} from '../store/cart/cart.actions';
+} from '../../store/cart/cart.actions';
 import { map } from 'rxjs';
 import { RouterLink } from '@angular/router';
 

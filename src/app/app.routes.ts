@@ -4,21 +4,21 @@ export const routes: Routes = [
   {
     path: 'product/:id',
     loadComponent: () =>
-      import('./product-detail-page/product-detail-page.component').then(
+      import('./pages/product-detail-page/product-detail-page.component').then(
         (m) => m.ProductDetailPageComponent
       ),
   },
   {
     path: 'cart',
     loadComponent: () =>
-      import('./cart-page/cart-page.component').then(
+      import('./pages/cart-page/cart-page.component').then(
         (m) => m.CartPageComponent
       ),
   },
   {
     path: '',
     loadComponent: () =>
-      import('./home-page/home-page.component').then(
+      import('./pages/home-page/home-page.component').then(
         (m) => m.HomePageComponent
       ),
   },

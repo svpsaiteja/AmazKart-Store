@@ -1,20 +1,20 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductService } from '../product.service';
+import { ProductService } from '../../product.service';
 import { map, Observable, tap } from 'rxjs';
-import { Product } from '../types/Product';
+import { Product } from '../../types/Product';
 import { CommonModule } from '@angular/common';
-import { QuantityUpdateComponent } from '../quantity-update/quantity-update.component';
-import { CartItem } from '../types/CartItem';
+import { QuantityUpdateComponent } from '../../components/quantity-update/quantity-update.component';
+import { CartItem } from '../../types/CartItem';
 import { Store } from '@ngxs/store';
-import { CartState } from '../store/cart/cart.state';
+import { CartState } from '../../store/cart/cart.state';
 import {
   AddItem,
   DecreaseQuantity,
   IncreaseQuantity,
   RemoveItem,
-} from '../store/cart/cart.actions';
-import { ProductDetailShimmerComponent } from '../product-detail-shimmer/product-detail-shimmer.component';
+} from '../../store/cart/cart.actions';
+import { ProductDetailShimmerComponent } from '../../shimmers/product-detail-shimmer/product-detail-shimmer.component';
 
 @Component({
   selector: 'app-product-detail-page',

@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngxs/store';
-import { CartState } from '../store/cart/cart.state';
+import { CartState } from '../../store/cart/cart.state';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
