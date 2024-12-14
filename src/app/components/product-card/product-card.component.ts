@@ -24,9 +24,9 @@ export class ProductCardComponent {
   cartQuantity!: Observable<number>;
 
   constructor(private store: Store) {
-    this.cartQuantity = this.store.select(CartState.getCart).pipe(
-      map((cartItems) => {
-        const cartItem = cartItems.find((i) => i.id === this.product.id);
+    this.cartQuantity = this.store.select(CartState.getCartItem).pipe(
+      map((getCartItem) => {
+        const cartItem = getCartItem(this.product.id);
 
         return cartItem ? cartItem.quantity : 0;
       })
